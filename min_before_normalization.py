@@ -1,0 +1,1 @@
+import pandas as pddf = pd.read_csv('Dummy_Values.csv')for col in df.select_dtypes(include=['int64', 'float64']).columns:    min_val = df[col].min()    if min_val < 1:        df[col] = df[col] + ((min_val * -1) + 1)df.to_csv("Min_Before_Norm.csv")
